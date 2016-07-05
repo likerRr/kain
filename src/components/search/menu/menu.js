@@ -16,17 +16,19 @@ class Menu {
 
   /**
    * Adds menu items to response
-   * @param exclude
+   * @param {boolean} exclude
    * @param onlyItems
    * @returns {Menu}
    */
   append(exclude, ...onlyItems) {
     let except = false;
 
-    if (exclude === !!exclude) {
+    if (exclude === true) {
       except = exclude;
     } else {
-      onlyItems.push(exclude);
+      if (exclude) {
+        onlyItems.push(exclude);
+      }
     }
 
     getOnly(this.items, onlyItems, 'id', except).forEach(item => {
