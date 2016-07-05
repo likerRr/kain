@@ -26,7 +26,9 @@ class Menu {
     if (exclude === true) {
       except = exclude;
     } else {
-      onlyItems.push(exclude);
+      if (exclude) {
+        onlyItems.push(exclude);
+      }
     }
 
     getOnly(this.items, onlyItems, 'id', except).forEach(item => {
