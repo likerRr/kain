@@ -22,7 +22,7 @@ class MenuItem/* extends EventEmitter*/ {
    * Executes item's callback
    */
   execute() {
-    if (this.onExecute) {
+    if (typeof this.onExecute === 'function') {
       this.onExecute();
     }
   }
