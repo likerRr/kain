@@ -16,6 +16,8 @@ class MenuItem/* extends EventEmitter*/ {
    */
   setPayload(payload) {
     this.payload = payload;
+
+    return this;
   }
 
   /**
