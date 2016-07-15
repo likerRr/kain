@@ -16,13 +16,15 @@ class MenuItem/* extends EventEmitter*/ {
    */
   setPayload(payload) {
     this.payload = payload;
+
+    return this;
   }
 
   /**
    * Executes item's callback
    */
   execute() {
-    if (this.onExecute) {
+    if (typeof this.onExecute === 'function') {
       this.onExecute();
     }
   }

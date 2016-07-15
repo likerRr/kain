@@ -38,6 +38,7 @@ module.exports = (res) => {
    * Non-blocking list drawing. Adds little delay to prevent program from freeze when it renders big response
    * @param list
    * @param cb
+   * TODO make callback optional
    */
   res.addList = function(list, cb) {
     let delay = 0;
@@ -79,6 +80,7 @@ module.exports = (res) => {
    * Shows error and prevents other responses from being added
    * @param msg
    * @param icon
+   * TODO add default message
    */
   res.error = function(msg, icon = 'fa-exclamation-circle') {
     res.capture();
